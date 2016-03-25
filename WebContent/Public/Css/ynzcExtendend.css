@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*表格样式*/
+.ynzcTableBlue {
+	border-collapse: collapse;
+	border:solid 1px #d0d1d3;
+	font-size:12px;
+	background:#fff;
+}
+
+/*.ynzcTableBlue tr:hover {	
+	background:#e9f6ff;
+}*/
+
+.ynzcTableBlue td,.ynzcTableBlue th {
+	border-collapse: collapse;
+	border:solid 1px #d0d1d3;
+	padding:5px;
+}
+
+/*表格样式分页*/
+.ynzcPage a {
+	height:15px;
+	line-height:15px;
+	margin:0px 4px 0px 0px;
+	padding:3px 5px;
+	color:#87ceff;
+	float:left;
+	border:1px solid #87ceff;
+	display:inline-block;
+	text-decoration:none;
+}
+
+.ynzcPage a:hover {	
+	height:13px;
+	line-height:13px;
+	color:#87ceff;
+	font-weight:bold;
+	border:2px solid #87ceff;
+}
+
+.ynzcPage span{
+	float:left;
+	display:inline-block;
+	margin:0px 4px 0px 0px;
+	padding:3px 5px;
+	color:#fff;
+	font-weight:bold;
+	height:15px;
+	line-height:15px;
+	background:#87ceff;
+	border:1px solid #87ceff;
+}

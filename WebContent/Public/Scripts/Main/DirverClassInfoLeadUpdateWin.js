@@ -1,0 +1,108 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.DirverClassInfoLeadUpdateWin=Ext.extend(Ext.Window,{
+	id:"dirverClassInfoLeadUpdateWin",
+	initComponent:function(){
+		Ext.apply(this,{
+			id:"dirverClassInfoUpdateWin",
+			title:"修改班级信息",
+			height:198,
+			width:500,
+			autoScroll:true,
+			resizable:false,
+			modal:true,
+			items:[{
+				layout:"column",
+				frame:true,
+				items:[{
+					layout:"column",
+					frame:true,
+					items:[{
+						columnWidth:1,
+						layout:"form",
+						items:[{
+							id:"className",
+							fieldLabel:"班级名称",
+							xtype:"textfield",
+							anchor:'98%'
+						},{
+							layout:"form",
+							items:[{
+								id:"classDate",
+								fieldLabel:"开班时间",
+								xtype:"datefield",
+								anchor:'98%'
+							}]
+						},{
+							layout:"form",
+							items:[{
+								id:"theoryExamDate",
+								fieldLabel:"理论考试时间",
+								xtype:"datefield",
+								anchor:'98%'
+							}]
+						},{
+							layout:"form",
+							items:[{
+								id:"practiceExamDate",
+								fieldLabel:"实践考试时间",
+								xtype:"datefield",
+								anchor:'98%'
+							}]
+						}]
+					}]
+				}]
+			}],
+			buttons:[{
+				id:"savaBtn",
+				text:"保存",
+				handler:function(){
+					if(checkLen(Ext.getCmp("className").getValue())){
+						Ext.MessageBox.alert("提示","班级名称填写有误!");
+						initFocus("className");
+						return;
+					}
+					if(Ext.getCmp("classDate").getValue() == ""){Ext.MessageBox.alert("提示","请填写开班时间!");return}
+					if(Ext.getCmp("theoryExamDate").getValue() == ""){Ext.MessageBox.alert("提示","请填写理论考试时间!");return}
+					if(Ext.getCmp("practiceExamDate").getValue() == ""){Ext.MessageBox.alert("提示","请填写实践考试时间!");return}
+	                var mask = new Ext.LoadMask(Ext.getBody(), {
+			     		msg : '正在處理数据,请稍等...',
+			     		removeMask:true
+	                });
+	                mask.show();
+					Ext.Ajax.request({
+						url:"main/driverClassInfo.html?action=updateLeadDriverClassInfo",
+						success:function(resp){
+							mask.hide();
+							var result=Ext.util.JSON.decode(resp.responseText);
+							if(result.success==true){
+								Ext.MessageBox.alert("提示",result.reason);
+								Ext.getCmp("driverClassInfoMgr").getStore().reload();
+								Ext.getCmp("dirverClassInfoLeadUpdateWin").close();
+							}else{
+								Ext.MessageBox.alert("提示",result.reason);
+							}
+						},
+						failure:function(){
+							Ext.MessageBox.alert("警告","<font color=red>与服务器通讯失败!</font>");
+						},
+						params:{
+							id:Ynzc.manage.DriverClassInfoId,
+							className:trim(Ext.getCmp("className").getValue()),
+							classDate:Ext.util.Format.date(Ext.getCmp("classDate").getValue(),'Y-m-d'),
+							theoryExamDate:Ext.util.Format.date(Ext.getCmp("theoryExamDate").getValue(),'Y-m-d'),
+							practiceExamDate:Ext.util.Format.date(Ext.getCmp("practiceExamDate").getValue(),'Y-m-d')
+						}
+					});
+				}
+			},{
+				id:"cancelBtn",
+				text:"取消",
+				handler:function(){
+					Ext.getCmp("dirverClassInfoLeadUpdateWin").close();
+				}
+			}]
+		});
+		Ynzc.manage.DirverClassInfoLeadUpdateWin.superclass.initComponent.apply(this,arguments);
+	}
+});

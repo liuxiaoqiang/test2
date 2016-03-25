@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+ 	http://www.springframework.org/schema/tx
+ 	http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+ 	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/ynzcams?characterEncoding=utf-8" />
+		<property name="username" value="root" />
+		<property name="password" value="mysql" />
+	</bean>
+
+	<!-- Using AnnotationSessionFactoryBean -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>Ynzc.YnzcAms.Model.User</value>
+				<value>Ynzc.YnzcAms.Model.Menu</value>
+				<value>Ynzc.YnzcAms.Model.Permissions</value>
+				<value>Ynzc.YnzcAms.Model.PermissionsView</value>
+				<value>Ynzc.YnzcAms.Model.Role</value>
+				<value>Ynzc.YnzcAms.Model.Certificate</value>
+				<value>Ynzc.YnzcAms.Model.Region</value>
+				<value>Ynzc.YnzcAms.Model.EngineBrand</value>
+				<value>Ynzc.YnzcAms.Model.GetWay</value>
+				<value>Ynzc.YnzcAms.Model.ImportsFile</value>
+				<value>Ynzc.YnzcAms.Model.InsuranceCompany</value>
+				<value>Ynzc.YnzcAms.Model.TempliveFile</value>
+				<value>Ynzc.YnzcAms.Model.WayFile</value>
+				<value>Ynzc.YnzcAms.Model.TractorInfo</value>
+				<value>Ynzc.YnzcAms.Model.UnitManage</value>
+				<value>Ynzc.YnzcAms.Model.HandlingSituation</value>
+				<value>Ynzc.YnzcAms.Model.OwnerInfo</value>
+				<value>Ynzc.YnzcAms.Model.RegisterInfo</value>
+				<value>Ynzc.YnzcAms.Model.RelationInfo</value>
+				<value>Ynzc.YnzcAms.Model.TechnicalInspect</value>
+				<value>Ynzc.YnzcAms.Model.TechnicalParameters</value>
+				<value>Ynzc.YnzcAms.Model.TractorBasicInfo</value>
+				<value>Ynzc.YnzcAms.Model.TractorInfoView</value>
+				<value>Ynzc.YnzcAms.Model.MachineType</value>
+				<value>Ynzc.YnzcAms.Model.CarChange</value>
+				<value>Ynzc.YnzcAms.Model.ChangeBody</value>
+				<value>Ynzc.YnzcAms.Model.ChangeColor</value>
+				<value>Ynzc.YnzcAms.Model.ChangeEngine</value>
+				<value>Ynzc.YnzcAms.Model.ChangeOwner</value>
+				<value>Ynzc.YnzcAms.Model.ChangeTrailer</value>
+				<value>Ynzc.YnzcAms.Model.CarCheck</value>
+				<value>Ynzc.YnzcAms.Model.CarTransfer</value>
+				<value>Ynzc.YnzcAms.Model.FuelType</value>
+				<value>Ynzc.YnzcAms.Model.PlateSubmit</value>
+				<value>Ynzc.YnzcAms.Model.NewPlate</value>
+				<value>Ynzc.YnzcAms.Model.ValidateList</value>
+				<value>Ynzc.YnzcAms.Model.CarCheckView</value>
+				<value>Ynzc.YnzcAms.Model.CarTransferView</value>
+				<value>Ynzc.YnzcAms.Model.PeopleInfo</value>
+				<value>Ynzc.YnzcAms.Model.BodyInfo</value>
+				<value>Ynzc.YnzcAms.Model.DriverStrInfo</value>
+				<value>Ynzc.YnzcAms.Model.DriverClassInfo</value>
+				<value>Ynzc.YnzcAms.Model.DriverClassTeam</value>
+				<value>Ynzc.YnzcAms.Model.TheoryExam</value>
+				<value>Ynzc.YnzcAms.Model.PracticeExam</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicence</value>
+				<value>Ynzc.YnzcAms.Model.DriverMark</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceType</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceRepair</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceShiftTo</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceLogout</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceGoto</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceTerm</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceChange</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceDefile</value>
+				<value>Ynzc.YnzcAms.Model.PeopleBodyView</value>
+				<value>Ynzc.YnzcAms.Model.DriverStrInfoView</value>
+				<value>Ynzc.YnzcAms.Model.SendInformation</value>
+				<value>Ynzc.YnzcAms.Model.Loyout</value>
+				<value>Ynzc.YnzcAms.Model.ChangeRecord</value>
+				<value>Ynzc.YnzcAms.Model.Mortgage</value>
+				<value>Ynzc.YnzcAms.Model.DriverClassStrView</value>
+				<value>Ynzc.YnzcAms.Model.CarChangeView</value>
+				<value>Ynzc.YnzcAms.Model.SendInformation</value>
+				<value>Ynzc.YnzcAms.Model.TractorReplacementInfo</value>
+				<value>Ynzc.YnzcAms.Model.DriverStrParticularView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceView</value>
+				<value>Ynzc.YnzcAms.Model.ChangeRecordView</value>
+				<value>Ynzc.YnzcAms.Model.LogoutView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceChangeView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceTermView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceRepairView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceGotoView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceShiftToView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceLogoutView</value>
+				<value>Ynzc.YnzcAms.Model.DrivingLicenceDefileView</value>
+				<value>Ynzc.YnzcAms.Model.TractorReplacementInfoView</value>
+				<value>Ynzc.YnzcAms.Model.MortgageView</value>
+				<value>Ynzc.YnzcAms.Model.DrivertrainingInfoView</value>
+				<value>Ynzc.YnzcAms.Model.DrivertrainingInfo</value>
+				<value>Ynzc.YnzcAms.Model.DrivertrainingCheckInfo</value>
+				<value>Ynzc.YnzcAms.Model.DrivertraingTractorinfoView</value>
+				<value>Ynzc.YnzcAms.Model.DrivertrainingView</value>
+				<value>Ynzc.YnzcAms.Model.Uniteharvester</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterView</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterCancle</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterCancleView</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterChange</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterChangeView</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterCheck</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterCheckView</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterMove</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterMoveView</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterRepair</value>
+				<value>Ynzc.YnzcAms.Model.UniteharvesterRepairView</value>
+				<value>Ynzc.YnzcAms.Model.TheoryMakeupExam</value>
+				<value>Ynzc.YnzcAms.Model.PracticeMakeupExam</value>
+				<value>Ynzc.YnzcAms.Model.TheoryMakeupExamView</value>
+				<value>Ynzc.YnzcAms.Model.PracticeMakeupExamView</value>
+				<value>Ynzc.YnzcAms.Model.SetTime</value>
+				<value>Ynzc.YnzcAms.Model.ReaperPlate</value>
+				<value>Ynzc.YnzcAms.Model.ReaperPlateSubmit</value>
+				<value>Ynzc.YnzcAms.Model.NewReaperPlate</value>
+				<value>Ynzc.YnzcAms.Model.Plate</value>
+				<value>Ynzc.YnzcAms.Model.PlateHandle</value>
+				<value>Ynzc.YnzcAms.Model.WordSet</value>
+				<value>Ynzc.YnzcAms.Model.PlateOperateRecord</value>
+				<value>Ynzc.YnzcAms.Model.PrintFlag</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.jdbc.fetch_size">30</prop>
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.HashtableCacheProvider
+				</prop>
+			</props>
+		</property>
+		<property name="eventListeners">
+			<map>
+				<entry key="pre-update">
+					<bean
+						class="org.hibernate.validator.event.ValidatePreUpdateEventListener" />
+				</entry>
+				<entry key="pre-insert">
+					<bean
+						class="org.hibernate.validator.event.ValidatePreInsertEventListener" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--  -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="fetchSize" value="30" />
+	</bean>
+
+	<bean id="userDao" class="Ynzc.YnzcAms.Dao.Impl.UserDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+    <bean id="tractorReplacementInfoDao"
+	     class="Ynzc.YnzcAms.Dao.Impl.TractorReplacementInfoDaoImpl">
+	     <property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="roleDao" class="Ynzc.YnzcAms.Dao.Impl.RoleDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+	<bean id="menuDao" class="Ynzc.YnzcAms.Dao.Impl.MenuDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="certificateDao"
+		class="Ynzc.YnzcAms.Dao.Impl.CertificateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="getWayDao" class="Ynzc.YnzcAms.Dao.Impl.GetWayDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="engineBrandDao"
+		class="Ynzc.YnzcAms.Dao.Impl.EngineBrandDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="importsFileDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ImportsFileDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="insuranceCompanyDao"
+		class="Ynzc.YnzcAms.Dao.Impl.InsuranceCompanyDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="templiveFileDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TempliveFileDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="unitManageDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UnitManageDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="wayFileDao"
+		class="Ynzc.YnzcAms.Dao.Impl.WayFileDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="regionDao" class="Ynzc.YnzcAms.Dao.Impl.RegionDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="tractorInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TractorInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="handlingSituationDao"
+		class="Ynzc.YnzcAms.Dao.Impl.HandlingSituationDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="ownerInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.OwnerInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="registerInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.RegisterInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="relationInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.RelationInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="technicalInspectDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TechnicalInspectDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="technicalParametersDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TechnicalParametersDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="tractorBasicInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TractorBasicInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="tractorInfoViewDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TractorInfoViewDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="machineTypeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.MachineTypeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="carChangeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.CarChangeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeBodyDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeBodyDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeColorDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeColorDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeEngineDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeEngineDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeOwnerDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeOwnerDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeTrailerDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeTrailerDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="carCheckDao"
+		class="Ynzc.YnzcAms.Dao.Impl.CarCheckDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="carTransferDao"
+		class="Ynzc.YnzcAms.Dao.Impl.CarTransferDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="fuelTypeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.FuelTypeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="plateSubmitDao"
+		class="Ynzc.YnzcAms.Dao.Impl.PlateSubmitDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="newPlateDao"
+		class="Ynzc.YnzcAms.Dao.Impl.NewPlateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="validateListDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ValidateListDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="peopleInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.PeopleInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="bodyInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.BodyInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="driverStrInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DriverStrInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="driverClassInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DriverClassInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="driverClassTeamDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DriverClassTeamDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="theoryExamDao"
+		class="Ynzc.YnzcAms.Dao.Impl.TheoryExamDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="practiceExamDao"
+		class="Ynzc.YnzcAms.Dao.Impl.PracticeExamDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="driverMarkDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DriverMarkDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceTypeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceTypeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceRepairDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceRepairDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceShiftToDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceShiftToDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceLogoutDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceLogoutDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceGotoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceGotoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceTermDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceTermDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceChangeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceChangeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivingLicenceDefileDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivingLicenceDefileDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="sendInfoDao" class="Ynzc.YnzcAms.Dao.Impl.SendInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	 </bean>
+	<bean id="plateDao"
+		class="Ynzc.YnzcAms.Dao.Impl.PlateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="loyoutDao" class="Ynzc.YnzcAms.Dao.Impl.LoyoutDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="changeRecordDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ChangeRecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="mortgageDao"
+		class="Ynzc.YnzcAms.Dao.Impl.MortgageDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivertrainingInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivertrainingInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="drivertrainingCheckInfoDao"
+		class="Ynzc.YnzcAms.Dao.Impl.DrivertrainingCheckInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterCancleDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterCancleDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterChangeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterChangeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterCheckDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterCheckDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterMoveDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterMoveDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="uniteharvesterRepairDao"
+		class="Ynzc.YnzcAms.Dao.Impl.UniteharvesterRepairDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="setTimeDao"
+		class="Ynzc.YnzcAms.Dao.Impl.SetTimeDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="reaperPlateDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ReaperPlateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="reaperPlateSubmitDao"
+		class="Ynzc.YnzcAms.Dao.Impl.ReaperPlateSubmitDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	<bean id="newReaperPlateDao"
+		class="Ynzc.YnzcAms.Dao.Impl.NewReaperPlateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+	
+	<bean id="plateHandleDao"		
+		class="Ynzc.YnzcAms.Dao.Impl.PlateHandleDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="wordSetDao"		
+		class="Ynzc.YnzcAms.Dao.Impl.WordSetDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>	
+	<bean id="plateOperateRecordDao"		
+		class="Ynzc.YnzcAms.Dao.Impl.PlateOperateRecordDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>	
+	<bean id="printFlagDao"		
+		class="Ynzc.YnzcAms.Dao.Impl.PrintFlagDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>	
+</beans>

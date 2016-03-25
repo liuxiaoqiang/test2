@@ -1,0 +1,195 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+
+Ynzc.manage.PersonalInfo=Ext.extend(Ext.Panel,{
+		id:"personalinfo",
+		initComponent:function(){
+			Ext.apply(this,{
+				id:"personalinfo",
+				layout:"fit",
+				bodyStyle:"padding:5px 5px",
+				items:[{
+					xtype:'fieldset',
+					title:"个人信息",
+					collapsible:true,
+					autoHeight:true,
+					width:400,
+					layout:"column", 
+					items:[{
+						columnWidth:.5,
+						layout:"form",
+						border:false,
+						labelWidth:60,
+						items:[{
+							id:"perUsername",
+							fieldLabel:"用户名",
+							xtype:"textfield",
+							disabled:true,
+							anchor:'98%'						
+						}]
+					},{
+						columnWidth:.5,
+						layout:"form",
+						border:false,
+						labelWidth:60,
+						items:[{
+							id:"perRealname",
+							fieldLabel:"真实姓名",
+							xtype:"textfield",
+							anchor:'98%'						
+						}]
+					},{
+						columnWidth:.5,
+						layout:"form",
+						border:false,
+						labelWidth:60,
+						items:[{
+							id:"perTelephone",
+							fieldLabel:"联系电话",
+							xtype:"textfield",
+							anchor:'98%'						
+						}]
+					},{
+						columnWidth:.5,
+						layout:"form",
+						border:false,
+						labelWidth:60,
+						items:[{
+							id:"perUnitid",
+							fieldLabel:"所属单位",
+							xtype:'uncombo',
+							gridWidth:481,
+							disabled:Oper==='admin'?false:true,
+			                anchor:'98%'
+						}]
+					},{
+						columnWidth:1,
+						layout:"form",
+						border:false,
+						labelWidth:60,
+						items:[{
+							id:"perRoleid",
+							fieldLabel:"角色",
+							xtype:'lovcombo',
+							displayField : 'rolename',
+							valueField : 'id',
+							typeAhead : true,
+							mode : 'remote',
+							editable : false,
+							selectOnFoucs : true,
+							triggerAction : 'all',
+							store:Ynzc.manage.ShowRoleStore,
+							disabled:Oper==='admin'?false:true,
+							emptyText:"请选择角色",
+							anchor:'98.7%'
+						}]
+					}]
+				}],
+				buttons:[{
+					text:"资料修改",
+					handler:function(){
+						if(Ext.getCmp("perUsername").getValue()==""){Ext.ux.Toast.msg("提示","请填写用户名!");return}
+						if(Ext.getCmp("perRealname").getValue()==""){Ext.ux.Toast.msg("提示","请填写真实姓名!");return}
+						if(Ext.getCmp("perTelephone").getValue()==""){Ext.ux.Toast.msg("提示","请填写联系电话!");return}
+						if(Ext.getCmp("perUnitid").getValue()==""){Ext.ux.Toast.msg("提示","请选择单位!");return}
+						if(Ext.getCmp("perRoleid").getValue()==""){Ext.ux.Toast.msg("提示","请选择角色!");return}
+						Ext.Ajax.request({
+							url:"main/user.html?action=updatePersonal",
+							success:function(){
+								Ext.ux.Toast.msg("提示","资料修改成功!");
+							},
+							failure:function(){
+								Ext.Msg.alert("警告","<font color=red>与服务器通讯失败!</font>");
+							},
+							params:{
+								username:Ext.getCmp("perUsername").getValue(),
+								realname:Ext.getCmp("perRealname").getValue(),
+								telephone:Ext.getCmp("perTelephone").getValue(),
+								unitid:Ext.getCmp("perUnitid").getMyValue(),
+								roleid:Ext.getCmp("perRoleid").getValue()
+							}
+						});
+					}
+				},{
+					text:"密码修改",
+					handler:function(){
+						new Ext.Window({
+							id:'pwdWin',
+							title:"密码修改",
+							modal:true,
+							width:400,
+							height:155,
+							layout:"form",
+							bodyStyle:"padding:5px 5px",
+							labelWidth:70,
+							items:[{
+								id:"oldpwd",
+								fieldLabel:"原密码",
+								xtype:"textfield",
+								inputType:"password",
+								anchor:'98%'
+							},{
+								id:'newpwd',
+								fieldLabel:"新密码",
+								xtype:"textfield",
+								inputType:"password",
+								anchor:'98%'
+							},{
+								id:"newpwdtwo",
+								fieldLabel:"确认新密码",
+								xtype:"textfield",
+								inputType:"password",
+								anchor:'98%'
+							}],
+							buttons:[{
+								text:"确认修改",
+								handler:function(){
+									if(Ext.getCmp("oldpwd").getValue()==""){Ext.ux.Toast.msg("提示","请输入原密码.");return;}
+									if(Ext.getCmp("newpwd").getValue()==""){Ext.ux.Toast.msg("提示","请输入新密码.");return;}
+									if(Ext.getCmp("newpwdtwo").getValue()==""){Ext.ux.Toast.msg("提示","请输入确认新密码.");return;}
+									if(Ext.getCmp("newpwd").getValue()!=Ext.getCmp("newpwdtwo").getValue()){Ext.ux.Toast.msg("提示","两次输入的密码不一致.");return;}
+									Ext.Ajax.request({
+										url:"main/user.html?action=resetPwd",
+										success:function(resp){
+											var result=Ext.util.JSON.decode(resp.responseText);
+											if(result.success==true){
+												Ext.ux.Toast.msg("提示","密码修改成功,密码从下次登录开始启用！");
+												Ext.getCmp("pwdWin").close();
+											}else{
+												Ext.Msg.alert("提示","输入的原密码错误！");
+											}
+										},
+										failure:function(){
+											Ext.Msg.alert("警告","<font color=red>与服务器通信失败!</font>");
+										},
+										params:{
+											oldpwd:Ext.getCmp("oldpwd").getValue(),
+											newpwd:Ext.getCmp("newpwd").getValue()
+										}
+									});
+								}
+							},{
+								text:"取消",
+								handler:function(){
+									Ext.getCmp("pwdWin").close();
+								}
+							}]
+						}).show();
+					}
+				}]
+			});
+			Ynzc.manage.PersonalInfo.superclass.initComponent.apply(this,arguments);
+			Ext.Ajax.request({
+				url:"main/user.html?action=getPersonal",
+				success:function(resp){
+					var result=Ext.util.JSON.decode(resp.responseText);
+					Ext.getCmp("perUsername").setValue(result.username);
+					Ext.getCmp("perRealname").setValue(result.realname);
+					Ext.getCmp("perTelephone").setValue(result.telephone);
+					Ext.getCmp("perUnitid").setMyValue(result.unitid),
+					Ext.getCmp("perRoleid").setValue(result.roleid)
+				}
+			});
+		}
+});
+Ext.reg("personal",Ynzc.manage.PersonalInfo);

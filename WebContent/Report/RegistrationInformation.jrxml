@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RegistrationInformation" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="owner_1" class="java.lang.String"/>
+	<field name="realcertificatetype_1" class="java.lang.String"/>
+	<field name="realcertificateno_1" class="java.lang.String"/>
+	<field name="registerdate_1" class="java.lang.String"/>
+	<field name="registrationauthority_1" class="java.lang.String"/>
+	<field name="registrationno_1" class="java.lang.String"/>
+	<field name="regcerno" class="java.lang.String"/>
+	<field name="machinetype" class="java.lang.String"/>
+	<field name="engineBrand" class="java.lang.String"/>
+	<field name="engineno" class="java.lang.String"/>
+	<field name="power" class="java.lang.String"/>
+	<field name="manufacturer" class="java.lang.String"/>
+	<field name="machinebodyno" class="java.lang.String"/>
+	<field name="shelfno" class="java.lang.String"/>
+	<field name="machinebodycolor" class="java.lang.String"/>
+	<field name="directcontrol" class="java.lang.String"/>
+	<field name="wheelno" class="java.lang.String"/>
+	<field name="wheelbase" class="java.lang.String"/>
+	<field name="wheeldisFront" class="java.lang.String"/>
+	<field name="tiresno" class="java.lang.String"/>
+	<field name="tiressize" class="java.lang.String"/>
+	<field name="steelspring" class="java.lang.String"/>
+	<field name="outSizeLong" class="java.lang.String"/>
+	<field name="containerLong" class="java.lang.String"/>
+	<field name="totalquality" class="java.lang.String"/>
+	<field name="ratifiedload" class="java.lang.String"/>
+	<field name="fuelname" class="java.lang.String"/>
+	<field name="driverinno" class="java.lang.String"/>
+	<field name="getway" class="java.lang.String"/>
+	<field name="manufacturedate" class="java.lang.String"/>
+	<field name="registrationauthority_2" class="java.lang.String"/>
+	<field name="registrationauthority_3" class="java.lang.String"/>
+	<field name="registrationauthority_4" class="java.lang.String"/>
+	<field name="registrationauthority_5" class="java.lang.String"/>
+	<field name="registrationauthority_6" class="java.lang.String"/>
+	<field name="registrationauthority_7" class="java.lang.String"/>
+	<field name="registerdate_2" class="java.lang.String"/>
+	<field name="registerdate_3" class="java.lang.String"/>
+	<field name="registerdate_4" class="java.lang.String"/>
+	<field name="registerdate_5" class="java.lang.String"/>
+	<field name="registerdate_6" class="java.lang.String"/>
+	<field name="registerdate_7" class="java.lang.String"/>
+	<field name="registrationno_2" class="java.lang.String"/>
+	<field name="registrationno_3" class="java.lang.String"/>
+	<field name="registrationno_4" class="java.lang.String"/>
+	<field name="registrationno_5" class="java.lang.String"/>
+	<field name="registrationno_6" class="java.lang.String"/>
+	<field name="registrationno_7" class="java.lang.String"/>
+	<field name="tractorType" class="java.lang.String"/>
+	<field name="owner_2" class="java.lang.String"/>
+	<field name="owner_3" class="java.lang.String"/>
+	<field name="owner_4" class="java.lang.String"/>
+	<field name="owner_5" class="java.lang.String"/>
+	<field name="owner_6" class="java.lang.String"/>
+	<field name="owner_7" class="java.lang.String"/>
+	<field name="realcertificatetype_2" class="java.lang.String"/>
+	<field name="realcertificatetype_3" class="java.lang.String"/>
+	<field name="realcertificatetype_4" class="java.lang.String"/>
+	<field name="realcertificatetype_5" class="java.lang.String"/>
+	<field name="realcertificatetype_6" class="java.lang.String"/>
+	<field name="realcertificatetype_7" class="java.lang.String"/>
+	<field name="realcertificateno_2" class="java.lang.String"/>
+	<field name="realcertificateno_3" class="java.lang.String"/>
+	<field name="realcertificateno_4" class="java.lang.String"/>
+	<field name="realcertificateno_5" class="java.lang.String"/>
+	<field name="realcertificateno_6" class="java.lang.String"/>
+	<field name="realcertificateno_7" class="java.lang.String"/>
+	<field name="outSizeWidth" class="java.lang.String"/>
+	<field name="outSizeHigh" class="java.lang.String"/>
+	<field name="containerWidth" class="java.lang.String"/>
+	<field name="containerHigh" class="java.lang.String"/>
+	<field name="wheeldisBack" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="782" splitType="Stretch">
+			<textField>
+				<reportElement x="191" y="13" width="100" height="23"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="13" width="148" height="23"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="37" width="67" height="24"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="36" width="196" height="24"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="34" width="78" height="24"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="13" width="108" height="23"/>
+				<box topPadding="3">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="426" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{machinetype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="450" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{engineBrand}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="470" width="126" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{engineno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="446" width="76" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{power}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="471" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{manufacturer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="495" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{machinebodyno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="706" width="95" height="24"/>
+				<box topPadding="5">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{manufacturedate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="706" width="96" height="24"/>
+				<box topPadding="5">
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{getway}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="682" width="74" height="24"/>
+				<box topPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{driverinno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="680" width="97" height="24"/>
+				<box topPadding="5">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fuelname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="659" width="74" height="24"/>
+				<box topPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ratifiedload}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="661" width="75" height="24"/>
+				<box topPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalquality}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="613" width="67" height="21"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{outSizeLong}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="636" width="67" height="24"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{containerLong}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="589" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tiressize}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="495" width="126" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{shelfno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="514" width="126" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{directcontrol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="542" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wheelno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="567" width="98" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wheeldisFront}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="538" width="99" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wheelbase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="560" width="126" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tiresno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="584" width="72" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{steelspring}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="74" width="148" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="75" width="100" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="74" width="108" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="95" width="161" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="139" width="162" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="183" width="161" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="227" width="161" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="271" width="163" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="314" width="162" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationauthority_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="97" width="67" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="141" width="67" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="185" width="67" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="228" width="67" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="271" width="67" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="316" width="67" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registerdate_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="97" width="78" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="141" width="78" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="185" width="79" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="228" width="79" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="272" width="77" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="316" width="77" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{registrationno_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="119" width="108" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="118" width="148" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="119" width="100" height="20"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="162" width="108" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="162" width="148" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="162" width="100" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="205" width="108" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="205" width="147" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="205" width="100" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="249" width="108" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="249" width="147" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="248" width="100" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="291" width="108" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificatetype_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="291" width="147" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{realcertificateno_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="291" width="100" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{owner_7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="518" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{machinebodycolor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="400" width="127" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{machinetype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="403" width="175" height="24"/>
+				<box topPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tractorType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="-6" width="97" height="23"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{regcerno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="613" width="67" height="21"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{outSizeWidth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="613" width="67" height="21"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center">
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{outSizeHigh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="636" width="67" height="23"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{containerWidth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="636" width="68" height="23"/>
+				<box topPadding="3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{containerHigh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="569" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{wheeldisBack}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

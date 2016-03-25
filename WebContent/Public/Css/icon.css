@@ -1,0 +1,229 @@
+.icon-welcome{background-image: url(../Images/icon/hotel.png) !important;
+}
+.icon-UserAdd{background-image: url(../Images/icon/user_add.png) !important;
+}
+.icon-UserDel{background-image: url(../Images/icon/user_delete.png) !important;
+}
+.icon-Add{background-image: url(../Images/icon/add.gif) !important;
+}
+.icon-Del{background-image: url(../Images/icon/delete.gif) !important;
+}
+.icon-Find{background-image: url(../Images/icon/magnifier_zoom_in.png) !important;
+}
+.icon-Permissions{background-image: url(../Images/icon/plus-shield.png) !important;
+}
+.icon-Region{background-image: url(../Images/icon/edit.gif) !important;
+}
+.icon-AddPermissions{background-image: url(../Images/icon/tick.png) !important;
+}
+.icon-DelPermissions{background-image: url(../Images/icon/cross.png) !important;
+}
+.icon-exit{background-image: url(../Images/icon/control-power.png) !important;
+}
+.icon-passRest{background-image: url(../Images/icon/password.png) !important;
+}
+.icon-sysModule{background-image: url(../Images/icon/system.png) !important;
+}
+.icon-userMgr{background-image: url(../Images/icon/group.png) !important;
+}
+.icon-userMgrRoot{background-image: url(../Images/icon/group.png) !important;
+}
+.icon-sendMgr{background-image: url(../Images/icon/dongtai.gif) !important;
+}
+.icon-sendMgrRoot{background-image: url(../Images/icon/dongtai.gif) !important;
+}
+.icon-roleMgr{background-image: url(../Images/icon/plus-shield.png) !important;
+}
+.icon-roleMgrRoot{background-image: url(../Images/icon/plus-shield.png) !important;
+}
+.icon-groupMgr{background-image: url(../Images/icon/checkin1.png) !important;
+}
+.icon-signMgr{background-image: url(../Images/icon/checkin.png) !important;
+}
+.icon-dataMgrRoot{background-image: url(../Images/icon/book_open.png) !important;
+}
+.icon-macMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-cerMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-engMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-getwayMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-importMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-insuranceMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-templMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-wayMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-regionMgrRoot{background-image: url(../Images/icon/address-book-open.png) !important;
+}
+.icon-regionMgr{background-image: url(../Images/icon/address-book-open.png) !important;
+}
+.icon-unitMgrRoot{background-image: url(../Images/icon/guestinfo.png) !important;
+}
+.icon-unitMgr{background-image: url(../Images/icon/guestinfo.png) !important;
+}
+.icon-fuelMgr{background-image: url(../Images/icon/doc.png) !important;
+}
+.icon-personMgrRoot{background-image: url(../Images/icon/user--pencil.png) !important;
+}
+.icon-personMgr{background-image: url(../Images/icon/user--pencil.png) !important;
+}
+.icon-validateListMgr{background-image: url(../Images/icon/doc.png) !important;
+}.icon-search{background-image: url(../Images/icon/search.png) !important;
+}
+.icon-submit{background-image: url(../Images/icon/switch.png) !important;
+}
+.icon-exam{background-image: url(../Images/icon/statchart.png) !important;
+}
+.icon-plateadd{background-image: url(../Images/icon/file-add.gif) !important;
+}
+.icon-plateremove{background-image: url(../Images/icon/file-remove.gif) !important;
+}
+.icon-save{background-image: url(../Images/icon/save.png) !important;
+}
+.icon-complate{background-image: url(../Images/icon/tick.png) !important;
+}
+.icon-plateset{background-image: url(../Images/icon/tag_blue_add.png) !important;
+}
+.icon-plateStatusChange{background-image: url(../Images/icon/edit.png) !important;
+}
+.icon-msgadd{background-image: url(../Images/icon/comment_add.png) !important;
+}
+.icon-msgdel{background-image: url(../Images/icon/comment_delete.png) !important;
+}
+.icon-checkout{background-image: url(../Images/icon/checkout.png) !important;
+}
+.icon-bookedit{background-image: url(../Images/icon/book_edit.png) !important;
+}
+.icon-checkininfo{background-image: url(../Images/icon/checkininfo.png) !important;
+}
+.icon-print{background-image: url(../Images/icon/print.png) !important;
+}
+.icon-traModule{background-image: url(../Images/icon/tractor.png) !important;
+}
+.icon-traRegRoot{background-image: url(../Images/icon/checkininfo.png) !important;
+}
+.icon-traRegMgr{background-image: url(../Images/icon/user--pencil.png) !important;
+}
+.icon-carcheckMgr{background-image: url(../Images/icon/checkin1.png) !important;
+}
+.icon-changeMgr{background-image: url(../Images/icon/checkin.png) !important;
+}
+.icon-repalceMgr{background-image: url(../Images/icon/page_edit.png) !important;
+}
+.icon-logoutMgr{background-image: url(../Images/icon/report.png) !important;
+}
+.icon-changeRecordMgr{background-image: url(../Images/icon/save.png) !important;
+}
+.icon-mortgageMgr{background-image: url(../Images/icon/edit.gif) !important;
+}
+.icon-lcheckMgrRoot{background-image: url(../Images/icon/user_business.png) !important;
+}
+.icon-ltraRegMgr{background-image: url(../Images/icon/user--pencil.png) !important;
+}
+.icon-auditcarMgr{background-image: url(../Images/icon/checkin1.png) !important;
+}
+.icon-auditcartransferMgr{background-image: url(../Images/icon/checkin.png) !important;
+}
+.icon-changeRecordMgr{background-image: url(../Images/icon/book_open.png) !important;
+}
+.icon-mortgageMgr{background-image: url(../Images/icon/checkrvinfo.png) !important;
+}
+.icon-auditmortgageMgr{background-image: url(../Images/icon/folder_find.png) !important;
+}
+.icon-auditcarchangeRecordMgr{background-image: url(../Images/icon/report_user.png) !important;
+}
+.icon-auditlogoutMgr{background-image: url(../Images/icon/find.png) !important;
+}
+.icon-carlibMgrRoot{background-image: url(../Images/icon/delivery.png) !important;
+}
+.icon-carlibMgr{background-image: url(../Images/icon/delivery.png) !important;
+}
+.icon-plateMgrRoot{background-image: url(../Images/icon/creditcards.png) !important;
+}
+.icon-cityPlateMgr{background-image: url(../Images/icon/page_white_put.png) !important;
+}
+.icon-proPlateMgr{background-image: url(../Images/icon/page_white_put.png) !important;
+}
+.icon-plateMgr{background-image: url(../Images/icon/number.png) !important;
+}
+.icon-auditcarchangeMgr{background-image: url(../Images/icon/book_open.png) !important;
+}
+.icon-driverModule{background-image: url(../Images/icon/leader.png) !important;
+}
+.icon-peopleInfoRoot{background-image: url(../Images/icon/vcard.png) !important;
+}
+.icon-peopleInfoMgr{background-image: url(../Images/icon/photo-album-blue.png) !important;
+}
+.icon-bodyInfoMgr{background-image: url(../Images/icon/group.png) !important;
+}
+.icon-driverStrRoot{background-image: url(../Images/icon/award_star_gold.png) !important;
+}
+.icon-driverStrInfoMgr{background-image: url(../Images/icon/guestinfo.png) !important;
+}
+.icon-driverClassInfoMgr{background-image: url(../Images/icon/logout.png) !important;
+}
+.icon-ExamInfoMgr{background-image: url(../Images/icon/stat.png) !important;
+}
+.icon-LeadExaminationMgr{background-image: url(../Images/icon/user.png) !important;
+}
+.icon-pigeonholeStrMgr{background-image: url(../Images/icon/folder_wrench.png) !important;
+}
+.icon-driverLicenceMgr{background-image: url(../Images/icon/guestinfo.png) !important;
+}
+.icon-driverRoot{background-image: url(../Images/icon/status_online.png) !important;
+}
+.icon-driverlicenceAwardMgr{background-image: url(../Images/icon/print.png) !important;
+}
+.icon-driverLicenceChangeMgr{background-image: url(../Images/icon/switch.png) !important;
+}
+.icon-drivingLicenceTermMgr{background-image: url(../Images/icon/page_white_star.png) !important;
+}
+.icon-drivingLicenceRepairMgr{background-image: url(../Images/icon/layout_join.png) !important;
+}
+.icon-drivingLicenceGotoMgr{background-image: url(../Images/icon/doc_page.png) !important;
+}
+.icon-drivingLicenceShiftToMgr{background-image: url(../Images/icon/sort_date.png) !important;
+}
+.icon-drivingLicenceLogoutMgr{background-image: url(../Images/icon/page_white_delete.png) !important;
+}
+.icon-drivingLicenceDefileMgr{background-image: url(../Images/icon/page_white_swoosh.png) !important;
+}
+.icon-driverLicenceAuditingMgr{background-image: url(../Images/icon/magnifier_zoom_in.png) !important;
+}
+.icon-driverLicencePigeonholeMgr{background-image: url(../Images/icon/clipboard_paste_image.png) !important;
+}
+.icon-drivertrainingModule{background-image: url(../Images/icon/Tools.png) !important;
+}
+.icon-drivertrainingInfoMgr{background-image: url(../Images/icon/keyboard.png) !important;
+}
+.icon-drivertrainingInfoRoot{background-image: url(../Images/icon/car.png) !important;
+}
+.icon-drivertrainingcheckinfoMgr{background-image: url(../Images/icon/report_user.png) !important;
+}
+.icon-uiteHarvesterModule{background-image: url(../Images/icon/chart_organisation.png) !important;
+}
+.icon-uiteHarvesterRoot{background-image: url(../Images/icon/chart_organisation.png) !important;
+}
+.icon-uiteHarvesterRegist{background-image: url(../Images/icon/book_edit.png) !important;
+}
+.icon-uiteHarvesterCheck{background-image: url(../Images/icon/folder_find.png) !important;
+}
+.icon-uiteHarvesterChange{background-image: url(../Images/icon/page_edit.png) !important;
+}
+.icon-uiteHarvestermove{background-image: url(../Images/icon/folder_go.png) !important;
+}
+.icon-uiteHarvesterCancle{background-image: url(../Images/icon/page_white_delete.png) !important;
+}
+.icon-uiteHarvesterRepair{background-image: url(../Images/icon/doc_convert.png) !important;
+}
+.icon-auditreplacementMgr{background-image: url(../Images/icon/report.png) !important;
+}
+.icon-auditchangerecordMgr{background-image: url(../Images/icon/manage.png) !important;
+}
+.checkCss{border-color:#FF0000; background-color:#3399FF;}
+}

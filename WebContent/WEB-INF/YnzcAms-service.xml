@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- ========================= Service BEANS ========================================= -->
+	<bean name="bodyInfoService" class="Ynzc.YnzcAms.Service.Impl.BodyInfoServiceImpl">
+		<property name="bodyInfoDao">
+			<ref bean="bodyInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="carChangeService" class="Ynzc.YnzcAms.Service.Impl.CarChangeServiceImpl">
+		<property name="carChangeDao">
+			<ref bean="carChangeDao" />	
+		</property>	
+	</bean>
+	<bean name="carCheckService" class="Ynzc.YnzcAms.Service.Impl.CarCheckServiceImpl">
+		<property name="carCheckDao">
+			<ref bean="carCheckDao" />	
+		</property>	
+	</bean>
+	<bean name="carTransferService" class="Ynzc.YnzcAms.Service.Impl.CarTransferServiceImpl">
+		<property name="carTransferDao">
+			<ref bean="carTransferDao" />	
+		</property>
+	</bean>
+	<bean name="certificateService" class="Ynzc.YnzcAms.Service.Impl.CertificateServiceImpl">
+		<property name="certificateDao">
+			<ref bean="certificateDao" />
+		</property>		
+	</bean>
+	<bean name="changeBodyService" class="Ynzc.YnzcAms.Service.Impl.ChangeBodyServiceImpl">
+		<property name="changeBodyDao">
+			<ref bean="changeBodyDao" />	
+		</property>	
+	</bean>
+	<bean name="changeColorService" class="Ynzc.YnzcAms.Service.Impl.ChangeColorServiceImpl">
+		<property name="changeColorDao">
+			<ref bean="changeColorDao" />	
+		</property>	
+	</bean>
+	<bean name="changeEngineService" class="Ynzc.YnzcAms.Service.Impl.ChangeEngineServiceImpl">
+		<property name="changeEngineDao">
+			<ref bean="changeEngineDao" />	
+		</property>	
+	</bean>
+	<bean name="changeOwnerService" class="Ynzc.YnzcAms.Service.Impl.ChangeOwnerServiceImpl">
+		<property name="changeOwnerDao">
+			<ref bean="changeOwnerDao" />	
+		</property>	
+	</bean>
+	<bean name="changeRecordService" class="Ynzc.YnzcAms.Service.Impl.ChangeRecordServiceImpl">
+		<property name="changeRecordDao">
+		<ref bean="changeRecordDao" />
+		</property>
+	</bean>
+	<bean name="changeTrailerService" class="Ynzc.YnzcAms.Service.Impl.ChangeTrailerServiceImpl">
+		<property name="changeTrailerDao">
+			<ref bean="changeTrailerDao" />	
+		</property>	
+	</bean>
+	<bean name="driverMarkService" class="Ynzc.YnzcAms.Service.Impl.DriverMarkServiceImpl">
+		<property name="driverMarkDao">
+			<ref bean="driverMarkDao" />	
+		</property>	
+	</bean>
+	<bean name="driverClassInfoService" class="Ynzc.YnzcAms.Service.Impl.DriverClassInfoServiceImpl">
+		<property name="driverClassInfoDao">
+			<ref bean="driverClassInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="driverClassTeamService" class="Ynzc.YnzcAms.Service.Impl.DriverClassTeamServiceImpl">
+		<property name="driverClassTeamDao">
+			<ref bean="driverClassTeamDao" />	
+		</property>	
+	</bean>
+	<bean name="driverStrInfoService" class="Ynzc.YnzcAms.Service.Impl.DriverStrInfoServiceImpl">
+		<property name="driverStrInfoDao">
+			<ref bean="driverStrInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceChangeService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceChangeServiceImpl">
+		<property name="drivingLicenceChangeDao">
+			<ref bean="drivingLicenceChangeDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceDefileService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceDefileServiceImpl">
+		<property name="drivingLicenceDefileDao">
+			<ref bean="drivingLicenceDefileDao" />	
+		</property>
+	</bean>
+	<bean name="drivingLicenceGotoService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceGotoServiceImpl">
+		<property name="drivingLicenceGotoDao">
+			<ref bean="drivingLicenceGotoDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceLogoutService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceLogoutServiceImpl">
+		<property name="drivingLicenceLogoutDao">
+			<ref bean="drivingLicenceLogoutDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceRepairService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceRepairServiceImpl">
+		<property name="drivingLicenceRepairDao">
+			<ref bean="drivingLicenceRepairDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceServiceImpl">
+		<property name="drivingLicenceDao">
+			<ref bean="drivingLicenceDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceShiftToService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceShiftToServiceImpl">
+		<property name="drivingLicenceShiftToDao">
+			<ref bean="drivingLicenceShiftToDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceTermService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceTermServiceImpl">
+		<property name="drivingLicenceTermDao">
+			<ref bean="drivingLicenceTermDao" />	
+		</property>	
+	</bean>
+	<bean name="drivingLicenceTypeService" class="Ynzc.YnzcAms.Service.Impl.DrivingLicenceTypeServiceImpl">
+		<property name="drivingLicenceTypeDao">
+			<ref bean="drivingLicenceTypeDao" />	
+		</property>	
+	</bean>
+	<bean name="engineBrandService" class="Ynzc.YnzcAms.Service.Impl.EngineBrandServiceImpl">
+		<property name="engineBrandDao">
+			<ref bean="engineBrandDao" />
+		</property>	
+	</bean>
+	<bean name="fuelTypeService" class="Ynzc.YnzcAms.Service.Impl.FuelTypeServiceImpl">
+		<property name="fuelTypeDao">
+			<ref bean="fuelTypeDao" />	
+		</property>
+	</bean>
+	<bean name="getWayService" class="Ynzc.YnzcAms.Service.Impl.GetWayServiceImpl">
+		<property name="getWayDao">
+			<ref bean="getWayDao" />
+		</property>	
+	</bean>
+	<bean name="handlingSituationService" class="Ynzc.YnzcAms.Service.Impl.HandlingSituationServiceImpl">
+		<property name="handlingSituationDao">
+			<ref bean="handlingSituationDao" />	
+		</property>	
+	</bean>
+	<bean name="importsFileService" class="Ynzc.YnzcAms.Service.Impl.ImportsFileServiceImpl">
+		<property name="importsFileDao">
+			<ref bean="importsFileDao" />
+		</property>	
+	</bean>
+	<bean name="insuranceCompanyService" class="Ynzc.YnzcAms.Service.Impl.InsuranceCompanyServiceImpl">
+		<property name="insuranceCompanyDao">
+			<ref bean="insuranceCompanyDao" />
+		</property>	
+	</bean>
+	<bean name="loyoutService" class="Ynzc.YnzcAms.Service.Impl.LoyoutServiceImpl">
+		<property name="loyoutDao">
+		<ref bean="loyoutDao" />
+		</property>
+	</bean>
+	<bean name="machineTypeService" class="Ynzc.YnzcAms.Service.Impl.MachineTypeServiceImpl">
+		<property name="machineTypeDao">
+			<ref bean="machineTypeDao" />	
+		</property>	
+	</bean>
+	<bean name="menuService" class="Ynzc.YnzcAms.Service.Impl.MenuServiceImpl">
+		<property name="menuDao">
+			<ref bean="menuDao" />
+		</property>	
+	</bean>
+	<bean name="mortgageService" class="Ynzc.YnzcAms.Service.Impl.MortgageServiceImpl">
+		<property name="mortgageDao">
+			<ref bean="mortgageDao" />
+		</property>
+	</bean>
+	<bean name="newPlateService" class="Ynzc.YnzcAms.Service.Impl.NewPlateServiceImpl">
+		<property name="newPlateDao">
+			<ref bean="newPlateDao" />	
+		</property>
+	</bean>
+	<bean name="ownerInfoService" class="Ynzc.YnzcAms.Service.Impl.OwnerInfoServiceImpl">
+		<property name="ownerInfoDao">
+			<ref bean="ownerInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="peopleInfoService" class="Ynzc.YnzcAms.Service.Impl.PeopleInfoServiceImpl">
+		<property name="peopleInfoDao">
+			<ref bean="peopleInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="plateService" class="Ynzc.YnzcAms.Service.Impl.PlateServiceImpl">
+		<property name="plateDao">
+			<ref bean="plateDao" />
+		</property>
+	</bean>
+	<bean name="plateSubmitService" class="Ynzc.YnzcAms.Service.Impl.PlateSubmitServiceImpl">
+		<property name="plateSubmitDao">
+			<ref bean="plateSubmitDao" />	
+		</property>	
+	</bean>
+	<bean name="practiceExamService" class="Ynzc.YnzcAms.Service.Impl.PracticeExamServiceImpl">
+		<property name="practiceExamDao">
+			<ref bean="practiceExamDao" />	
+		</property>	
+	</bean>
+	<bean name="regionService" class="Ynzc.YnzcAms.Service.Impl.RegionServiceImpl">
+		<property name="regionDao">
+			<ref bean="regionDao" />	
+		</property>	
+	</bean>
+	<bean name="registerInfoService" class="Ynzc.YnzcAms.Service.Impl.RegisterInfoServiceImpl">
+		<property name="registerInfoDao">
+			<ref bean="registerInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="relationInfoService" class="Ynzc.YnzcAms.Service.Impl.RelationInfoServiceImpl">
+		<property name="relationInfoDao">
+			<ref bean="relationInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="roleService" class="Ynzc.YnzcAms.Service.Impl.RoleServiceImpl">
+		<property name="roleDao">
+			<ref bean="roleDao" />
+		</property>
+	</bean>
+	<bean name="sendInfoService" class="Ynzc.YnzcAms.Service.Impl.SendInfoServiceImpl">
+		<property name="sendInfoDao">
+			<ref bean="sendInfoDao"></ref>
+		</property>
+	</bean>
+	<bean name="technicalInspectService" class="Ynzc.YnzcAms.Service.Impl.TechnicalInspectServiceImpl">
+		<property name="technicalInspectDao">
+			<ref bean="technicalInspectDao" />	
+		</property>	
+	</bean>
+	<bean name="technicalParametersService" class="Ynzc.YnzcAms.Service.Impl.TechnicalParametersServiceImpl">
+		<property name="technicalParametersDao">
+			<ref bean="technicalParametersDao" />	
+		</property>	
+	</bean>
+	<bean name="templiveFileService" class="Ynzc.YnzcAms.Service.Impl.TempliveFileServiceImpl">
+		<property name="templiveFileDao">
+			<ref bean="templiveFileDao" />
+		</property>	
+	</bean>
+	<bean name="theoryExamService" class="Ynzc.YnzcAms.Service.Impl.TheoryExamServiceImpl">
+		<property name="theoryExamDao">
+			<ref bean="theoryExamDao" />	
+		</property>	
+	</bean>
+	<bean name="tractorBasicInfoService" class="Ynzc.YnzcAms.Service.Impl.TractorBasicInfoServiceImpl">
+		<property name="tractorBasicInfoDao">
+			<ref bean="tractorBasicInfoDao" />	
+		</property>	
+	</bean>
+	<bean name="tractorInfoService" class="Ynzc.YnzcAms.Service.Impl.TractorInfoServiceImpl">
+		<property name="tractorInfoDao">
+			<ref bean="tractorInfoDao" />	
+		</property>	
+	</bean>	<bean name="tractorInfoViewService" class="Ynzc.YnzcAms.Service.Impl.TractorInfoViewServiceImpl">
+		<property name="tractorInfoViewDao">
+			<ref bean="tractorInfoViewDao" />	
+		</property>	
+	</bean>	
+	<bean name="tractorReplacementInfoService" class="Ynzc.YnzcAms.Service.Impl.TractorReplacementInfoServiceImpl">
+		<property name="tractorReplacementInfoDao">
+		<ref bean="tractorReplacementInfoDao" />
+		</property>
+	</bean>	
+	<bean name="unitManageService" class="Ynzc.YnzcAms.Service.Impl.UnitManageServiceImpl">
+		<property name="unitManageDao">
+			<ref bean="unitManageDao" />
+		</property>		
+	</bean>	
+	<bean name="userService" class="Ynzc.YnzcAms.Service.Impl.UserServiceImpl">
+		<property name="userDao">
+			<ref bean="userDao" />
+		</property>
+	</bean>	<bean name="validateListService" class="Ynzc.YnzcAms.Service.Impl.ValidateListServiceImpl">
+		<property name="validateListDao">
+			<ref bean="validateListDao" />	
+		</property>
+	</bean>	
+	<bean name="wayFileService" class="Ynzc.YnzcAms.Service.Impl.WayFileServiceImpl">
+		<property name="wayFileDao">
+			<ref bean="wayFileDao" />
+		</property>	
+	</bean>
+	<bean name="drivertrainingService" class="Ynzc.YnzcAms.Service.Impl.DrivertrainingServiceImpl">
+		<property name="drivertrainingInfoDao">
+			<ref bean="drivertrainingInfoDao"/>
+		</property>
+	</bean>
+	<bean name="drivertrainingCheckService" class="Ynzc.YnzcAms.Service.Impl.DrivertrainingCheckServiceImpl">
+		<property name="drivertrainingCheckInfoDao">
+			<ref bean="drivertrainingCheckInfoDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterServiceImpl">
+		<property name="uniteharvesterDao">
+			<ref bean="uniteharvesterDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterCancleService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterCancleServiceImpl">
+		<property name="uniteharvesterCancleDao">
+			<ref bean="uniteharvesterCancleDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterChangeService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterChangeServiceImpl">
+		<property name="uniteharvesterChangeDao">
+			<ref bean="uniteharvesterChangeDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterCheckService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterCheckServiceImpl">
+		<property name="uniteharvesterCheckDao">
+			<ref bean="uniteharvesterCheckDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterMoveService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterMoveServiceImpl">
+		<property name="uniteharvesterMoveDao">
+			<ref bean="uniteharvesterMoveDao"/>
+		</property>
+	</bean>
+	<bean name="uniteharvesterRepairService" class="Ynzc.YnzcAms.Service.Impl.UniteharvesterRepairServiceImpl">
+		<property name="uniteharvesterRepairDao">
+			<ref bean="uniteharvesterRepairDao"/>
+		</property>
+	</bean>
+	<bean name="reaperPlateService" class="Ynzc.YnzcAms.Service.Impl.ReaperPlateServiceImpl">
+		<property name="plateDao">
+ 			 <ref bean="reaperPlateDao" /> 
+  		</property>
+  	</bean>
+	<bean name="reaperPlateSubmitService" class="Ynzc.YnzcAms.Service.Impl.ReaperPlateSubmitServiceImpl">
+		<property name="reaperPlateSubmitDao">
+ 			 <ref bean="reaperPlateSubmitDao" /> 
+ 		 </property>
+  	</bean>
+	<bean name="newReaperPlateService" class="Ynzc.YnzcAms.Service.Impl.NewReaperPlateServiceImpl">
+		 <property name="newPlateDao">
+  			<ref bean="newReaperPlateDao" /> 
+  		</property>
+  	</bean>
+	<bean name="setTimeService" class="Ynzc.YnzcAms.Service.Impl.SetTimeServiceImpl">
+		<property name="setTimeDao">
+			<ref bean="setTimeDao"></ref>
+		</property>
+	</bean>
+	<bean name="plateHandleService" class="Ynzc.YnzcAms.Service.Impl.PlateHandleServiceImpl">
+		<property name="plateHandleDao">
+			<ref bean="plateHandleDao"/>
+		</property>
+	</bean>
+	<bean name="wordSetService" class="Ynzc.YnzcAms.Service.Impl.WordSetServiceImpl">
+		<property name="wordSetDao">
+			<ref bean="wordSetDao" />	
+		</property>
+	</bean>
+	<bean name="plateOperateRecordService" class="Ynzc.YnzcAms.Service.Impl.PlateOperateRecordServiceImpl">
+		<property name="plateOperateRecordDao">
+			<ref bean="plateOperateRecordDao" />	
+		</property>
+	</bean>
+	<bean name="printFlagService" class="Ynzc.YnzcAms.Service.Impl.PrintFlagServiceImpl">
+		<property name="printFlagDao">
+			<ref bean="printFlagDao" />	
+		</property>
+	</bean>
+</beans>

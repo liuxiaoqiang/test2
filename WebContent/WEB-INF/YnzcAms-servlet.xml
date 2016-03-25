@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- ModelAndView 路径配置 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/View/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- 请求映射 -->
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login.html">loginController</prop>
+				<prop key="main/menu.html">menuController</prop>
+				<prop key="main/role.html">roleController</prop>
+				<prop key="main/user.html">userController</prop>
+				<prop key="main/region.html">regionController</prop>
+				<prop key="main/certificate.html">certificateController</prop>
+				<prop key="main/unitManage.html">unitManageController</prop>
+				<prop key="main/engineBrand.html">engineBrandController</prop>
+				<prop key="main/getWay.html">getWayController</prop>
+				<prop key="main/importsFile.html">importsFileController</prop>
+				<prop key="main/insuranceCompany.html">insuranceCompanyController</prop>
+				<prop key="main/templiveFile.html">templiveFileController</prop>
+				<prop key="main/wayFile.html">wayFileController</prop>
+				<prop key="main/tractorInfo.html">tractorInfoController</prop>
+				<prop key="main/handlingSituation.html">handlingSituationController</prop>
+				<prop key="main/ownerInfo.html">ownerInfoController</prop>
+				<prop key="main/registerInfo.html">registerInfoController</prop>
+				<prop key="main/relationInfo.html">relationInfoController</prop>
+				<prop key="main/technicalInspect.html">technicalInspectController</prop>
+				<prop key="main/technicalParameters.html">technicalParametersController</prop>
+				<prop key="main/tractorBasicInfo.html">tractorBasicInfoController</prop>
+				<prop key="main/tractorInfoView.html">tractorInfoViewController</prop>
+				<prop key="main/machineType.html">machineTypeController</prop>
+				<prop key="main/carCheck.html">carCheckController</prop>
+				<prop key="main/carTransfer.html">carTransferController</prop>
+				<prop key="main/fuelType.html">fuelTypeController</prop>
+				<prop key="main/validateList.html">validateListController</prop>
+				<prop key="main/plate.html">plateController</prop>
+				<prop key="main/carChange.html">carChangeController</prop>
+				<prop key="main/peopleInfo.html">peopelInfoController</prop>
+				<prop key="main/bodyInfo.html">bodyInfoController</prop>
+				<prop key="main/driverStrInfo.html">driverStrInfoController</prop>
+				<prop key="main/driverClassInfo.html">driverClassInfoController</prop>
+				<prop key="main/drivingLicence.html">drivingLicenceController</prop>
+				<prop key="main/sendInfo.html">sendInfoController</prop>
+				<prop key="main/logout.html">logoutController</prop>
+				<prop key="main/changeRecord.html">changeRecordController</prop>
+				<prop key="main/mortgage.html">mortgageController</prop>
+				<prop key="main/drivingLicenceType.html">drivingLicenceTypeController</prop>
+				<prop key="main/theoryExam.html">theoryExamController</prop>
+				<prop key="main/practiceExam.html">practiceExamController</prop>
+				<prop key="main/report.html">reportController</prop>
+				<prop key="main/tractorReplacementInfo.html">tractorReplacementInfoController</prop>
+				<prop key="main/driverMark.html">driverMarkController</prop>
+				<prop key="main/drivingLicenceChange.html">drivingLicenceChangeController</prop>
+				<prop key="main/drivingLicenceTerm.html">drivingLicenceTermController</prop>
+				<prop key="main/drivingLicenceRepair.html">drivinglincenceRepairController</prop>
+				<prop key="main/drivingLicenceReport.html">reportDrivinglincenceController</prop>
+				<prop key="main/drivingLicenceGoto.html">drivingLicenceGotoController</prop>
+				<prop key="main/drivingLicenceShiftTo.html">drivingLicenceShiftToController</prop>
+				<prop key="main/drivingLicenceLogout.html">drivingLicenceLogoutController</prop>
+				<prop key="main/drivingLicenceDefile.html">drivingLicenceDefileController</prop>
+				<prop key="main/drivingLicenceOperation.html">leadExaminationLicenceController</prop>
+				<prop key="main/drivingLicencePigeonhole.html">drivingLicencePigeonholeController</prop>
+				<prop key="main/reportPeopleInfo.html">reportPeopleInfoController</prop>
+				<prop key="main/drivertrainingCheckInfo.html">drivertrainingCheckInfoController</prop>
+				<prop key="main/drivertrainingInfo.html">drivertrainingInfoController</prop>
+				<prop key="main/uniteharvesterInfo.html">uniteharvesterController</prop>
+				<prop key="main/uniteharvesterCancleInfo.html">uniteharvesterCancleController</prop>
+				<prop key="main/uniteharvesterChangeInfo.html">uniteharvesterChangeController</prop>
+				<prop key="main/uniteharvesterCheckInfo.html">uniteharvesterCheckController</prop>
+				<prop key="main/uniteharvesterMoveInfo.html">uniteharvesterMoveController</prop>
+				<prop key="main/uniteharvesterRepairInfo.html">uniteharvesterRepairController</prop>
+				<prop key="main/setTime.html">setTimeController</prop>
+				<prop key="main/reaperPlate.html">reaperPlateController</prop>
+				<prop key="main/reportDriverStrInfo.html">reportDriverStrInfoController</prop>
+				<prop key="main/word.html">wordController</prop>
+				<prop key="main/printFlag.html">printFlagController</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="openSessionInViewInterceptor"
+		class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="paraNameResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="action" />
+		<property name="defaultMethodName" value="init" />
+	</bean>
+		<!-- ServiceManager -->
+	<bean id="serviceManager" class="Ynzc.YnzcAms.Service.Manager.ServiceManager">
+		<property name="bodyInfoService">
+			<ref bean="bodyInfoService" />
+		</property>
+		<property name="carChangeService">
+			<ref bean="carChangeService" />
+		</property>
+		<property name="carCheckService">
+			<ref bean="carCheckService" />
+		</property>
+		<property name="carTransferService">
+			<ref bean="carTransferService" />
+		</property>
+		<property name="certificateService">
+			<ref bean="certificateService" />
+		</property>
+		<property name="changeBodyService">
+			<ref bean="changeBodyService" />
+		</property>
+		<property name="changeColorService">
+			<ref bean="changeColorService" />
+		</property>
+		<property name="changeEngineService">
+			<ref bean="changeEngineService" />
+		</property>
+		<property name="changeOwnerService">
+			<ref bean="changeOwnerService" />
+		</property>
+		<property name="changeRecordService">
+			<ref bean="changeRecordService" />
+		</property>
+		<property name="changeTrailerService">
+			<ref bean="changeTrailerService" />
+		</property>
+		<property name="driverMarkService">
+			<ref bean="driverMarkService" />
+		</property>
+		<property name="driverClassInfoService">
+			<ref bean="driverClassInfoService" />
+		</property>
+		<property name="driverClassTeamService">
+			<ref bean="driverClassTeamService" />
+		</property>
+		<property name="driverStrInfoService">
+			<ref bean="driverStrInfoService" />
+		</property>
+		<property name="drivingLicenceChangeService">
+			<ref bean="drivingLicenceChangeService" />
+		</property>
+		<property name="drivingLicenceDefileService">
+			<ref bean="drivingLicenceDefileService" />
+		</property>
+		<property name="drivingLicenceGotoService">
+			<ref bean="drivingLicenceGotoService" />
+		</property>
+		<property name="drivingLicenceLogoutService">
+			<ref bean="drivingLicenceLogoutService" />
+		</property>
+		<property name="drivingLicenceRepairService">
+			<ref bean="drivingLicenceRepairService" />
+		</property>
+		<property name="drivingLicenceService">
+			<ref bean="drivingLicenceService" />
+		</property>
+		<property name="drivingLicenceShiftToService">
+			<ref bean="drivingLicenceShiftToService" />
+		</property>
+		<property name="drivingLicenceTermService">
+			<ref bean="drivingLicenceTermService" />
+		</property>
+		<property name="drivingLicenceTypeService">
+			<ref bean="drivingLicenceTypeService" />
+		</property>
+		<property name="engineBrandService">
+			<ref bean="engineBrandService" />
+		</property>
+		<property name="fuelTypeService">
+			<ref bean="fuelTypeService" />
+		</property>
+		<property name="getWayService">
+			<ref bean="getWayService" />
+		</property>
+		<property name="handlingSituationService">
+			<ref bean="handlingSituationService" />
+		</property>
+		<property name="importsFileService">
+			<ref bean="importsFileService" />
+		</property>
+		<property name="insuranceCompanyService">
+			<ref bean="insuranceCompanyService" />
+		</property>
+		<property name="loyoutService">
+			<ref bean="loyoutService" />
+		</property>
+		<property name="machineTypeService">
+			<ref bean="machineTypeService" />
+		</property>
+		<property name="menuService">
+			<ref bean="menuService" />
+		</property>
+		<property name="mortgageService">
+			<ref bean="mortgageService" />
+		</property>
+		<property name="newPlateService">
+			<ref bean="newPlateService" />
+		</property>
+		<property name="ownerInfoService">
+			<ref bean="ownerInfoService" />
+		</property>
+		<property name="peopleInfoService">
+			<ref bean="peopleInfoService" />
+		</property>
+		<property name="plateService">
+			<ref bean="plateService" />
+		</property>
+		<property name="plateSubmitService">
+			<ref bean="plateSubmitService" />
+		</property>
+		<property name="practiceExamService">
+			<ref bean="practiceExamService" />
+		</property>
+		<property name="regionService">
+			<ref bean="regionService" />
+		</property>
+		<property name="registerInfoService">
+			<ref bean="registerInfoService" />
+		</property>
+		<property name="relationInfoService">
+			<ref bean="relationInfoService" />
+		</property>
+		<property name="roleService">
+			<ref bean="roleService" />
+		</property>
+		<property name="sendInfoService">
+			<ref bean="sendInfoService" />
+		</property>
+		<property name="technicalInspectService">
+			<ref bean="technicalInspectService" />
+		</property>
+		<property name="technicalParametersService">
+			<ref bean="technicalParametersService" />
+		</property>
+		<property name="templiveFileService">
+			<ref bean="templiveFileService" />
+		</property>
+		<property name="theoryExamService">
+			<ref bean="theoryExamService" />
+		</property>
+		<property name="tractorBasicInfoService">
+			<ref bean="tractorBasicInfoService" />
+		</property>
+		<property name="tractorInfoService">
+			<ref bean="tractorInfoService" />
+		</property>
+		<property name="tractorInfoViewService">
+			<ref bean="tractorInfoViewService" />
+		</property>
+		<property name="tractorReplacementInfoService">
+			<ref bean="tractorReplacementInfoService" />
+		</property>
+		<property name="unitManageService">
+			<ref bean="unitManageService" />
+		</property>
+		<property name="userService">
+			<ref bean="userService" />
+		</property>
+		<property name="validateListService">
+			<ref bean="validateListService" />
+		</property>
+		<property name="wayFileService">
+			<ref bean="wayFileService" />
+		</property>
+				<property name="drivertrainingService">
+			<ref bean="drivertrainingService" />
+		</property>
+		<property name="drivertrainingCheckService">
+			<ref bean="drivertrainingCheckService" />
+		</property>
+		<property name="uniteharvesterService">
+			<ref bean="uniteharvesterService" />
+		</property>
+		<property name="uniteharvesterCancleService">
+			<ref bean="uniteharvesterCancleService" />
+		</property>
+		<property name="uniteharvesterChangeService">
+			<ref bean="uniteharvesterChangeService" />
+		</property>
+		<property name="uniteharvesterCheckService">
+			<ref bean="uniteharvesterCheckService" />
+		</property>
+		<property name="uniteharvesterMoveService">
+			<ref bean="uniteharvesterMoveService" />
+		</property>
+		<property name="uniteharvesterRepairService">
+			<ref bean="uniteharvesterRepairService" />
+		</property>
+		<property name="setTimeService">
+			<ref bean="setTimeService" />
+		</property>
+		<property name="reaperPlateSubmitService">
+			<ref bean="reaperPlateSubmitService" />
+		</property>
+		<property name ="newReaperPlateService">
+			<ref bean="newReaperPlateService" />
+		</property>
+		<property name ="reaperPlateService">
+			<ref bean="reaperPlateService" />
+		</property>
+		<property name = "plateHandleService">
+			<ref bean="plateHandleService" />
+		</property>
+		<property name = "wordSetService">
+			<ref bean="wordSetService" />
+		</property>
+		<property name = "plateOperateRecordService">
+			<ref bean="plateOperateRecordService" />
+		</property>
+		<property name = "printFlagService">
+			<ref bean="printFlagService" />
+		</property>
+	</bean>
+	<!-- Controller Definition -->
+	<bean id="loginController"
+		class="Ynzc.YnzcAms.Controller.LoginController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="menuController"
+		class="Ynzc.YnzcAms.Controller.MenuController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="reportDriverStrInfoController"
+		class="Ynzc.YnzcAms.Controller.ReportDriverStrInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="tractorReplacementInfoController"
+	      class="Ynzc.YnzcAms.Controller.TractorReplacementInfoController">
+	      <property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	      </bean>
+	<bean id="roleController"
+		class="Ynzc.YnzcAms.Controller.RoleController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="userController"
+		class="Ynzc.YnzcAms.Controller.UserController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="certificateController"
+		class="Ynzc.YnzcAms.Controller.CertificateController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="unitManageController"
+		class="Ynzc.YnzcAms.Controller.UnitManageController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="engineBrandController"
+		class="Ynzc.YnzcAms.Controller.EngineBrandController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="getWayController"
+		class="Ynzc.YnzcAms.Controller.GetWayController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="importsFileController"
+		class="Ynzc.YnzcAms.Controller.ImportsFileController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="insuranceCompanyController"
+		class="Ynzc.YnzcAms.Controller.InsuranceCompanyController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="templiveFileController"
+		class="Ynzc.YnzcAms.Controller.TempliveFileController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="wayFileController"
+		class="Ynzc.YnzcAms.Controller.WayFileController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="regionController"
+		class="Ynzc.YnzcAms.Controller.RegionController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="tractorInfoController"
+		class="Ynzc.YnzcAms.Controller.TractorInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="handlingSituationController"
+		class="Ynzc.YnzcAms.Controller.HandlingSituationController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="ownerInfoController"
+		class="Ynzc.YnzcAms.Controller.OwnerInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="registerInfoController"
+		class="Ynzc.YnzcAms.Controller.RegisterInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="relationInfoController"
+		class="Ynzc.YnzcAms.Controller.RelationInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="technicalInspectController"
+		class="Ynzc.YnzcAms.Controller.TechnicalInspectController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="technicalParametersController"
+		class="Ynzc.YnzcAms.Controller.TechnicalParametersController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="tractorBasicInfoController"
+		class="Ynzc.YnzcAms.Controller.TractorBasicInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="tractorInfoViewController"
+		class="Ynzc.YnzcAms.Controller.TractorInfoViewController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="machineTypeController"
+		class="Ynzc.YnzcAms.Controller.MachineTypeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="carCheckController"
+		class="Ynzc.YnzcAms.Controller.CarCheckController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="carTransferController"
+		class="Ynzc.YnzcAms.Controller.CarTransferController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="fuelTypeController"
+		class="Ynzc.YnzcAms.Controller.FuelTypeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="validateListController"
+			class="Ynzc.YnzcAms.Controller.ValidateListController">
+			<property name="methodNameResolver">
+				<ref bean="paraNameResolver" />
+			</property>
+			<property name="serviceManager">
+				<ref bean="serviceManager" />
+			</property>
+	</bean>
+	<bean id="plateController"
+		class="Ynzc.YnzcAms.Controller.PlateController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="carChangeController"
+		class="Ynzc.YnzcAms.Controller.CarChangeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="peopelInfoController"
+		class="Ynzc.YnzcAms.Controller.PeopelInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="bodyInfoController"
+		class="Ynzc.YnzcAms.Controller.BodyInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="driverStrInfoController"
+		class="Ynzc.YnzcAms.Controller.DriverStrInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="driverClassInfoController"
+		class="Ynzc.YnzcAms.Controller.DriverClassInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="sendInfoController" class="Ynzc.YnzcAms.Controller.SendInfoController">
+		<property name="methodNameResolver" ref="paraNameResolver"></property>
+		<property name="serviceManager" ref="serviceManager"></property>
+	 </bean>
+	<bean id="logoutController"
+		class="Ynzc.YnzcAms.Controller.LogoutController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="changeRecordController"
+		class="Ynzc.YnzcAms.Controller.ChangeRecordController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="mortgageController"
+		class="Ynzc.YnzcAms.Controller.MortgageController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceTypeController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceTypeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="theoryExamController"
+		class="Ynzc.YnzcAms.Controller.TheoryExamController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="practiceExamController"
+		class="Ynzc.YnzcAms.Controller.PracticeExamController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="reportController"
+		class="Ynzc.YnzcAms.Controller.ReportController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="driverMarkController"
+		class="Ynzc.YnzcAms.Controller.DriverMarkController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+		<bean id="task" class="Ynzc.YnzcAms.Util.Task">
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceChangeController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceChangeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceTermController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceTermController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceGotoController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceGotoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceLogoutController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceLogoutController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceDefileController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceDefileController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+		<bean id="drivertrainingInfoController"
+		class="Ynzc.YnzcAms.Controller.DrivertrainingInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivertrainingCheckInfoController"
+		class="Ynzc.YnzcAms.Controller.DrivertrainingCheckInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicenceShiftToController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceShiftToController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="leadExaminationLicenceController"
+		class="Ynzc.YnzcAms.Controller.LeadExaminationLicenceController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivingLicencePigeonholeController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicencePigeonholeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="drivinglincenceRepairController"
+		class="Ynzc.YnzcAms.Controller.DrivingLicenceRepairController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="reportPeopleInfoController"
+		class="Ynzc.YnzcAms.Controller.ReportPeopleInfoController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="uniteharvesterController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="uniteharvesterCancleController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterCancleController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="uniteharvesterChangeController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterChangeController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+		<bean id="setTimeController" class="Ynzc.YnzcAms.Controller.SetTimeController">
+		<property name="methodNameResolver" ref="paraNameResolver"></property>
+		<property name="serviceManager" ref="serviceManager"></property>
+	 </bean>
+	<bean id="uniteharvesterCheckController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterCheckController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="uniteharvesterMoveController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterMoveController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="reportDrivinglincenceController"
+		class="Ynzc.YnzcAms.Controller.ReportDrivinglincenceController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="uniteharvesterRepairController"
+		class="Ynzc.YnzcAms.Controller.UniteharvesterRepairController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="scheduledTask"
+		class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay">
+			<value>3600000</value>
+		</property>
+		<property name="period">
+			<value>3600000</value>
+		</property>
+		<property name="timerTask">
+			<ref local="task" />
+		</property>
+	</bean>
+	<bean id="start"
+		class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref bean="scheduledTask" />
+			</list>
+		</property>
+	</bean>
+	<bean id="reaperPlateController" 
+		class="Ynzc.YnzcAms.Controller.ReaperPlateController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+	<bean id="wordController" 
+		class="Ynzc.YnzcAms.Controller.WordController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+		<bean id="printFlagController" 
+		class="Ynzc.YnzcAms.Controller.PrintFlagController">
+		<property name="methodNameResolver">
+			<ref bean="paraNameResolver" />
+		</property>
+		<property name="serviceManager">
+			<ref bean="serviceManager" />
+		</property>
+	</bean>
+</beans>

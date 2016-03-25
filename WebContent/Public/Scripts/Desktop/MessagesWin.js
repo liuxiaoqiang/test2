@@ -1,0 +1,11 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.MessagesWin=Ext.extend(Ext.Window,{
+		initComponent:function(){
+			Ext.apply(this,{
+				height:400,
+				widght:500
+			});
+			Ynzc.manage.MessagesWin.superclass.initComponent.apply(this,arguments);
+		}
+});

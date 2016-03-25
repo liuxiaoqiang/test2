@@ -1,0 +1,56 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.ReaperPlateLibGridWin=Ext.extend(Ext.Window,{
+	id:"reaperplatelibgridwin",
+	initComponent:function(){
+	Ext.apply(this,{
+		title:"选择号牌分配地区",
+		id:"checknumber",
+		width:400,
+		autoScroll:true,
+		resizable:false,
+		modal:true,
+		items:[{
+			layout:"form",
+			frame:true,
+			items:[{
+				id:"checknumberinfo",
+				fieldLabel:"分配地区",
+	 			xtype:"plcombo",
+				anchor:'98%'
+			}]
+		}],
+		buttons:[{
+			text:"提交",
+			handler:function(){
+			var type="0";
+			if(Ext.getCmp("checknumberinfo").getMyValue()==null){
+			     Ext.ux.Toast.msg("提示","请选择分配地区！");
+			     return;
+			}
+			Ext.Ajax.request({
+			    url:"main/reaperPlate.html?action=updatePlateStutas",
+			    method:"post",
+			    success:function(resp){
+			 		var result = Ext.util.JSON.decode(resp.responseText);
+			 		if(result.success == true){
+			 			Ext.ux.Toast.msg("提示","分配成功！");  
+			 			Ynzc.manage.dataGrid.getStore().reload();
+			 			Ext.getCmp("reaperplatelibgridwin").close();
+			 		}
+				},
+				failure:function(){
+					Ext.Msg.alert("警告","<font color=red>与服务器通讯失败！</font>");  
+				},
+				  params:{
+					dellist:Ext.util.JSON.encode(Ynzc.manage.rds),
+					unitid:Ext.getCmp("checknumberinfo").getMyValue(),
+					type:type
+				}
+			});
+		}
+		}]
+	});
+	Ynzc.manage.ReaperPlateLibGridWin.superclass.initComponent.apply(this,arguments);
+	}
+});

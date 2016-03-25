@@ -1,0 +1,117 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.UserUpdateWin=Ext.extend(Ext.Window,{
+		id:"userupdatewin",
+		initComponent:function(){
+			Ext.apply(this,{
+				id:"userupdatewin",
+				title:"修改操作用户",
+				height:"auto",
+				width:475,
+				resizable:false,
+				modal:true,
+				items:[{
+					layout:"column",
+					frame:true,
+					items:[{
+						columnWidth:1,
+		 				layout:"form",
+						labelWidth:60,
+						items:[{
+							id:"username",
+							fieldLabel:"用户名",
+							xtype:"textfield",
+							disabled:true,
+							anchor:'98%'
+						}]
+					},{
+						columnWidth:1,
+						layout:"form",
+						labelWidth:60,
+						items:[{
+							id:"realname",
+							fieldLabel:"真实姓名",
+							xtype:"textfield",
+							anchor:'98%'
+						}]
+					},{
+						columnWidth:1,
+						layout:"form",
+						labelWidth:60,
+						items:[{
+							id:"telephone",
+							fieldLabel:"联系电话",
+							xtype:"textfield",
+							anchor:'98%'
+						}]
+					},{
+						columnWidth:1,
+						layout:"form",
+						labelWidth:60,
+						items:[{
+							id:"unitid",
+							fieldLabel:"所属单位",
+							xtype:'uncombo',
+			                anchor:'98%'
+						}]
+					},{
+						columnWidth:1,
+						layout:"form",
+						labelWidth:60,
+						items:[{
+							id:"roleid",
+							fieldLabel:"角色",
+							xtype:'lovcombo',
+							displayField : 'rolename',
+							valueField : 'id',
+							typeAhead : true,
+							mode : 'remote',
+							editable : false,
+							selectOnFoucs : true,
+							triggerAction : 'all',
+							store:Ynzc.manage.RoleStore,
+							emptyText:"请选择角色",
+							anchor:'98%'
+						}]
+					}]
+				}],
+				buttons:[{
+					id:"savaBtn",
+					text:"保存",
+					handler:function(){
+						if(Ext.getCmp("username").getValue()==""){Ext.ux.Toast.msg("提示","请填写用户名!");return}
+						if(Ext.getCmp("realname").getValue()==""){Ext.ux.Toast.msg("提示","请填写真实姓名!");return}
+						if(Ext.getCmp("telephone").getValue()==""){Ext.ux.Toast.msg("提示","请填写联系电话!");return}
+						if(Ext.getCmp("unitid").getValue()==""){Ext.ux.Toast.msg("提示","请选择所属单位!");return}
+						if(Ext.getCmp("roleid").getValue()==""){Ext.ux.Toast.msg("提示","请选择用户角色!");return}
+						Ext.Ajax.request({
+							url:"main/user.html?action=updateUser",
+							success:function(){
+								Ext.ux.Toast.msg("提示","用户修改成功!");
+								Ext.getCmp("userMgr").getStore().reload();
+								Ext.getCmp("userupdatewin").close();
+							},
+							failure:function(){
+								Ext.Msg.alert("警告","<font color=red>与服务器通讯失败!</font>");
+							},
+							params:{
+								id:Ynzc.manage.userid,
+								username:Ext.getCmp("username").getValue(),
+								realname:Ext.getCmp("realname").getValue(),
+								telephone:Ext.getCmp("telephone").getValue(),
+								unitid:Ext.getCmp("unitid").getMyValue(),
+								roleid:Ext.getCmp("roleid").getValue()
+							}
+						});
+					}
+				},{
+					id:"cancelBtn",
+					text:"取消",
+					handler:function(){
+						Ext.getCmp("userupdatewin").close();
+					}
+				}]
+			});
+			Ynzc.manage.UserUpdateWin.superclass.initComponent.apply(this,arguments);
+		}
+});

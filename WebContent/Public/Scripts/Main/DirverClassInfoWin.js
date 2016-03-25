@@ -1,0 +1,77 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.DirverClassInfoWin=Ext.extend(Ext.Window,{
+	id:"dirverClassInfoWin",
+	initComponent:function(){
+		Ext.apply(this,{
+			id:"dirverClassInfoWin",
+			title:"添加班级信息",
+			height:'auto',
+			width:500,
+			autoScroll:true,
+			resizable:false,
+			modal:true,
+			items:[{
+				layout:"column",
+				frame:true,
+				items:[{
+					layout:"column",
+					frame:true,
+					items:[{
+						columnWidth:1,
+						layout:"form",
+						items:[{
+							id:"className",
+							fieldLabel:"班级名称",
+							xtype:"textfield",
+							anchor:'98%'
+						}]
+					}]
+				}]
+			}],
+			buttons:[{
+				id:"savaBtn",
+				text:"保存",
+				handler:function(){
+					if(checkLen(Ext.getCmp("className").getValue())){
+						Ext.MessageBox.alert("提示","班级名称填写有误!");
+						initFocus("className");
+						return;
+					}
+	                var mask = new Ext.LoadMask(Ext.getBody(), {
+			     		msg : '正在录入数据,请稍等...',
+			     		removeMask:true
+	                });
+	                mask.show();
+					Ext.Ajax.request({
+						url:"main/driverClassInfo.html?action=addDriverClassInfo",
+						success:function(resp){
+							mask.hide();
+							var result=Ext.util.JSON.decode(resp.responseText);
+							if(result.success==true){
+								Ext.MessageBox.alert("提示","班级信息添加成功!");
+								Ext.getCmp("driverClassInfoMgr").getStore().reload();
+								Ext.getCmp("dirverClassInfoWin").close();
+							}else{
+								Ext.MessageBox.alert("提示","填写的班级名称已存在!");
+							}
+						},
+						failure:function(){
+							Ext.MessageBox.alert("警告","<font color=red>与服务器通讯失败!</font>");
+						},
+						params:{
+							className:trim(Ext.getCmp("className").getValue())
+						}
+					});
+				}
+			},{
+				id:"cancelBtn",
+				text:"取消",
+				handler:function(){
+					Ext.getCmp("dirverClassInfoWin").close();
+				}
+			}]
+		});
+		Ynzc.manage.DirverClassInfoWin.superclass.initComponent.apply(this,arguments);
+	}
+});

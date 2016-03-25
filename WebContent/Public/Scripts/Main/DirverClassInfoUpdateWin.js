@@ -1,0 +1,78 @@
+Ext.ns("Ynzc");
+Ext.ns("Ynzc.manage");
+Ynzc.manage.DirverClassInfoUpdateWin=Ext.extend(Ext.Window,{
+	id:"dirverClassInfoUpdateWin",
+	initComponent:function(){
+		Ext.apply(this,{
+			id:"dirverClassInfoUpdateWin",
+			title:"修改班级信息",
+			height:'auto',
+			width:500,
+			autoScroll:true,
+			resizable:false,
+			modal:true,
+			items:[{
+				layout:"column",
+				frame:true,
+				items:[{
+					layout:"column",
+					frame:true,
+					items:[{
+						columnWidth:1,
+						layout:"form",
+						items:[{
+							id:"className",
+							fieldLabel:"班级名称",
+							xtype:"textfield",
+							anchor:'98%'
+						}]
+					}]
+				}]
+			}],
+			buttons:[{
+				id:"savaBtn",
+				text:"保存",
+				handler:function(){
+					if(checkLen(Ext.getCmp("className").getValue())){
+						Ext.MessageBox.alert("提示","班级名称填写有误!");
+						initFocus("className");
+						return;
+					}
+	                var mask = new Ext.LoadMask(Ext.getBody(), {
+			     		msg : '正在录入数据,请稍等...',
+			     		removeMask:true
+	                });
+	                mask.show();
+					Ext.Ajax.request({
+						url:"main/driverClassInfo.html?action=updateDriverClassInfo",
+						success:function(resp){
+							mask.hide();
+							var result=Ext.util.JSON.decode(resp.responseText);
+							if(result.success==true){
+								Ext.MessageBox.alert("提示",result.reason);
+								Ext.getCmp("driverClassInfoMgr").getStore().reload();
+								Ext.getCmp("dirverClassInfoUpdateWin").close();
+							}else{
+								Ext.MessageBox.alert("提示",result.reason);
+							}
+						},
+						failure:function(){
+							Ext.MessageBox.alert("警告","<font color=red>与服务器通讯失败!</font>");
+						},
+						params:{
+							id:Ynzc.manage.DriverClassInfoId,
+							className:trim(Ext.getCmp("className").getValue())
+						}
+					});
+				}
+			},{
+				id:"cancelBtn",
+				text:"取消",
+				handler:function(){
+					Ext.getCmp("dirverClassInfoUpdateWin").close();
+				}
+			}]
+		});
+		Ynzc.manage.DirverClassInfoUpdateWin.superclass.initComponent.apply(this,arguments);
+	}
+});
